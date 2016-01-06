@@ -30,10 +30,10 @@
                     'Body' => $_POST['text']
                 ));
                 
-                echo '<p class="bg-success">Message Sent!</p>';
+                echo '<p class="bg-success status">Message Sent!</p>';
                 
             } catch (Services_Twilio_RestException $e) {
-                echo '<p class="bg-danger">' . $e->getMessage() . '</p>';
+                echo '<p class="bg-danger status">' . $e->getMessage() . '</p>';
             }
         }
         
