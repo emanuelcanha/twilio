@@ -1,10 +1,10 @@
 <?php
     $body = trim($_POST['Body']);
     
-    if (strcasecmp($body, 'yes')) {
-    $msg = 'yes';
+    if (strcasecmp($body, 'yes') == 0) {
+        $msg = 'yes';
 
-    } else if (strcasecmp($body, 'no')){
+    } else if (strcasecmp($body, 'no') == 0){
         $msg = 'no';
     }
 
