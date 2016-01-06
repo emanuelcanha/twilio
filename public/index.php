@@ -25,13 +25,14 @@
                     'To' => '+44' . $_POST['number'], // Text this number
                     'Body' => $_POST['text']
                 ));
+                
+                print $message->sid;
+
+                echo 'Message Sent!';
+                
             } catch (Services_Twilio_RestException $e) {
                 echo $e->getMessage();
             }
-
-            print $message->sid;
-
-            echo 'Message Sent!';
         ?>
 
         <?php else: ?>
