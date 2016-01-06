@@ -2,14 +2,15 @@
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
-    if (POST['Body'] == 'YES') {
-    	echo "<Response>
-    	<Message>Hello, Mobile Monkey YES</Message>
-		</Response>";
+  	<?php if (POST['Body'] == 'YES') {
+    	$msg = 'yes'
     
     } else {
-    	echo "<Response>
-    	<Message>Hello, Mobile Monkey NO</Message>
-		</Response>";
+    	$msg = 'no'
     }
+    
 ?>
+
+<Response>
+    <Message><?php echo $msg . ' thanks for your reply' ?></Message>
+</Response>
