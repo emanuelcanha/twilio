@@ -1,6 +1,6 @@
 <?php
     
-  	if (POST['Body'] == 'YES') {
+  	if ($_POST['Body'] == 'YES') {
     	$msg = 'yes';
     
     } else {
