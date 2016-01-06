@@ -43,7 +43,7 @@
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
                 Number: <input type="number" name="number"><br>
                 Text: <input type="text" name="text"><br>
-                <input type="submit" name="send">
+                <input type="button" class="btn btn-primary" value="Send">
             </form>
         <?php endif; ?>
 
