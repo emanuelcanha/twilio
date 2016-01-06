@@ -38,13 +38,42 @@
         
         ?>
 
-        <DIV>
-            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
-                Number: <input type="number" name="number"><br>
-                Text: <input type="text" name="text"><br>
-                <input type="submit" class="btn btn-primary" value="Send">
+        <div class="container">
+            <br>
+
+            <h2>Trojan Utilities SMS Gateway</h2>
+
+            <br><br>
+
+            <form method="post">
+                <div class="form-group">
+                    <label for="number" class="col-sm-1 control-label">Number</label>
+                    <div class="col-sm-3">
+                        <input type="number" id="number" class="form-control" name="number" placeholder="i.e. 07543225228"><br>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="text" class="col-sm-1 control-label">Text</label>
+                    <div class="col-sm-6">
+                        <input type="text" id="text" class="form-control" name="text"><br>
+                    </div>
+                </div>
+                 <div class="col-sm-12">
+                     
+                <div class="form-group col-sm-7">
+                    <div class="text-right">
+                        <input type="submit" class="btn btn-primary" value="Send">
+                    </div>
+                </div>
+
             </form>
-        </DIV>
+
+            </div>
+        </div>
 
     </BODY>
 </HTML>
