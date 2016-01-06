@@ -9,7 +9,7 @@
 
     </HEAD>
     <BODY>
-
+        <div class="container">
         <?php
 // Install the library via PEAR or download the .zip file to your project folder.
 // This line loads the library
@@ -37,7 +37,7 @@
         
         ?>
 
-        <div class="container">
+        
             <br>
 
             <h2>Trojan Utilities SMS Gateway</h2>
