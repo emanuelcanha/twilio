@@ -1,10 +1,10 @@
 <?php
     
   	<?php if (POST['Body'] == 'YES') {
-    	$msg = 'yes'
+    	$msg = 'yes';
     
     } else {
-    	$msg = 'no'
+    	$msg = 'no';
     }
 
     header("content-type: text/xml");
