@@ -22,8 +22,8 @@
             try {
                 $message = $client->account->messages->create(array(
                     'From' => '+441704450193', // From a valid Twilio number
-                    'To' => '+4407543228225', // Text this number
-                    'Body' => 'Hello monkey!'
+                    'To' => '+44' . $_POST['number'], // Text this number
+                    'Body' => $_POST['text']
                 ));
             } catch (Services_Twilio_RestException $e) {
                 echo $e->getMessage();
