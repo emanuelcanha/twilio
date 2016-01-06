@@ -15,8 +15,9 @@
         $sid = "AC1bd01d0304ada92d34175d05fb42afe8"; // Your Account SID from www.twilio.com/user/account
         $token = "27f226f3a4457865b8493d8b82812865"; // Your Auth Token from www.twilio.com/user/account
 
-        if (!empty($_POST)) {
+        if (!empty($_POST['submit'])) {
             $client = new Services_Twilio($sid, $token);
+            
             try {
                 $message = $client->account->messages->create(array(
                     'From' => '+441704450193', // From a valid Twilio number
@@ -32,15 +33,12 @@
         }
         ?>
 
-        <DIV>
-
+        
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
                 Number: <input type="number" name="number"><br>
                 Text: <input type="text" name="text"><br>
                 <input type="button" class="btn btn-primary" value="Send">
             </form>
-
-        </DIV>
-
+               
     </BODY>
 </HTML>
