@@ -37,14 +37,8 @@
                 echo $e->getMessage();
             }
         ?>
-        
-        
 
         <?php else: ?>
-        
-        
-        
-        <?php endif; ?>
         
         <DIV>
         
@@ -55,6 +49,8 @@
             </form>
             
         </DIV>
+        
+        <?php endif; ?>
 
     </BODY>
 </HTML>
