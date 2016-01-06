@@ -6,42 +6,35 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
               integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        
+
         <link rel="stylesheet" type="text/css" href="css/default.css">
 
     </HEAD>
     <BODY>
         <div class="container">
-        <?php
-// Install the library via PEAR or download the .zip file to your project folder.
-// This line loads the library
-        require('Services/Twilio.php');
+            <?php
+                require('Services/Twilio.php');
 
-        $sid = "AC1bd01d0304ada92d34175d05fb42afe8"; // Your Account SID from www.twilio.com/user/account
-        $token = "27f226f3a4457865b8493d8b82812865"; // Your Auth Token from www.twilio.com/user/account
-       
-        if (!empty($_POST)) {
+                $sid = "AC1bd01d0304ada92d34175d05fb42afe8"; // Your Account SID from www.twilio.com/user/account
+                $token = "27f226f3a4457865b8493d8b82812865"; // Your Auth Token from www.twilio.com/user/account
 
-            $client = new Services_Twilio($sid, $token);
-            try {
-                $message = $client->account->messages->create(array(
-                    'From' => '+441704450193', // From a valid Twilio number
-                    'To' => '+44' . $_POST['number'], // Text this number
-                    'Body' => $_POST['text']
-                ));
-                
-                echo '<p class="bg-success status">Message Sent!</p>';
-                
-            } catch (Services_Twilio_RestException $e) {
-                echo '<p class="bg-danger status">' . $e->getMessage() . '</p>';
-            }
-        }
-        
-        ?>
+                if (!empty($_POST)) {
 
-        
-            <br>
+                    $client = new Services_Twilio($sid, $token);
+                    try {
+                        $message = $client->account->messages->create(array(
+                            'From' => '+441704450193', // From a valid Twilio number
+                            'To' => '+44' . $_POST['number'], // Text this number
+                            'Body' => $_POST['text']
+                        ));
 
+                        echo '<p class="bg-success status">Message Sent</p>';
+                    } catch (Services_Twilio_RestException $e) {
+                        echo '<p class="bg-danger status">' . $e->getMessage() . '</p>';
+                    }
+                }
+            ?>
+            
             <h2>Trojan Utilities SMS Gateway</h2>
 
             <br><br>
@@ -63,18 +56,18 @@
                         <input type="text" id="text" class="form-control" name="text"><br>
                     </div>
                 </div>
-                 <div class="col-sm-12">
-                     
-                <div class="form-group col-sm-7">
-                    <div class="text-right">
-                        <input type="submit" class="btn btn-primary" value="Send">
+                <div class="col-sm-12">
+
+                    <div class="form-group col-sm-7">
+                        <div class="text-right">
+                            <input type="submit" class="btn btn-primary" value="Send">
+                        </div>
                     </div>
-                </div>
 
             </form>
 
-            </div>
         </div>
+    </div>
 
-    </BODY>
+</BODY>
 </HTML>
